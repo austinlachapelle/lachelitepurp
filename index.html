@@ -208,12 +208,14 @@
 
   .hero-bg-logo {
     position: absolute;
-    right: max(-3vw, -40px);
-    top: 50%;
-    width: min(56vw, 700px);
-    opacity: 0.24;
+    right: clamp(-10px, 1.6vw, 34px);
+    top: 36%;
+    z-index: 0;
+    width: min(46vw, 620px);
+    opacity: 0.34;
     transform: translateY(-50%);
     filter: saturate(1.06) drop-shadow(0 24px 50px rgba(0, 0, 0, 0.36));
+    pointer-events: none;
   }
 
   .hero::after {
@@ -826,17 +828,34 @@
       display: none;
     }
 
+    .site-header {
+      background: var(--plum-deep);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: none;
+    }
+
     .nav {
-      min-height: 76px;
+      min-height: 68px;
+      justify-content: center;
     }
 
     .brand img {
-      width: 78px;
-      height: 54px;
+      width: 76px;
+      height: 52px;
     }
 
     .brand-copy {
-      display: none;
+      display: grid;
+    }
+
+    .brand-name {
+      color: #ffffff;
+      font-size: 0.96rem;
+    }
+
+    .brand-meta {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.72rem;
     }
 
     .nav-links {
@@ -852,10 +871,10 @@
     }
 
     .hero-bg-logo {
-      width: 88vw;
-      right: -26vw;
-      top: 42%;
-      opacity: 0.18;
+      width: min(76vw, 520px);
+      right: -12vw;
+      top: 34%;
+      opacity: 0.22;
     }
 
     .hero-inner {
@@ -937,10 +956,10 @@
     }
 
     .hero-bg-logo {
-      width: 112vw;
-      right: -44vw;
-      top: 35%;
-      opacity: 0.12;
+      width: 82vw;
+      right: -16vw;
+      top: 24%;
+      opacity: 0.18;
     }
 
     .hero-inner {
