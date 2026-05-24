@@ -806,8 +806,14 @@
     font-size: 0.86rem;
   }
 
-  .mobile-action-bar {
-    display: none;
+  @media (max-width: 1100px) {
+    .site-header {
+      position: static;
+    }
+
+    .nav-cta {
+      display: none;
+    }
   }
 
   @media (max-width: 920px) {
@@ -834,6 +840,10 @@
     }
 
     .nav-links {
+      display: none;
+    }
+
+    .nav-cta {
       display: none;
     }
 
@@ -885,10 +895,6 @@
       scroll-padding-top: 72px;
     }
 
-    body {
-      padding-bottom: 88px;
-    }
-
     .topbar-inner,
     .nav,
     .hero-inner,
@@ -918,10 +924,6 @@
     .brand img {
       width: 68px;
       height: 48px;
-    }
-
-    .nav-cta {
-      display: none;
     }
 
     .hero {
@@ -1137,10 +1139,6 @@
       padding: 1.1rem;
     }
 
-    .site-footer {
-      padding-bottom: 6rem;
-    }
-
     .program-top,
     .program-body,
     .info-card,
@@ -1149,22 +1147,6 @@
       padding: 1rem;
     }
 
-    .mobile-action-bar {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 40;
-      display: block;
-      padding: 0.75rem 0.9rem calc(0.75rem + env(safe-area-inset-bottom));
-      background: rgba(18, 9, 24, 0.92);
-      border-top: 1px solid var(--line-dark);
-      backdrop-filter: blur(16px);
-    }
-
-    .mobile-action-bar .button {
-      box-shadow: none;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1188,7 +1170,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="#">
-        <img src="LachElitePurp-2.png" alt="Lachapelle Elite logo">
+        <img src="./lachapelle-elite-logo.png" onerror="this.onerror=null;this.src='./LachElitePurp-2.png';" alt="Lachapelle Elite logo">
         <span class="brand-copy">
           <span class="brand-name">Lachapelle Elite</span>
           <span class="brand-meta">Pitching &amp; performance coaching</span>
@@ -1206,7 +1188,7 @@
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <img class="hero-bg-logo" src="LachElitePurp-2.png" alt="">
+      <img class="hero-bg-logo" src="./lachapelle-elite-logo.png" onerror="this.onerror=null;this.src='./LachElitePurp-2.png';" alt="">
       <div class="hero-inner">
         <div class="eyebrow">Private coaching for developing athletes</div>
         <h1 id="hero-title">Varsity and collegiate level pitching programs</h1>
@@ -1427,7 +1409,7 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="LachElitePurp-2.png" alt="Lachapelle Elite logo">
+        <img src="./lachapelle-elite-logo.png" onerror="this.onerror=null;this.src='./LachElitePurp-2.png';" alt="Lachapelle Elite logo">
         <p>Pitching, strength, and conditioning coaching in Eugene, Oregon. Built for athletes and clear for families.</p>
       </div>
       <div class="footer-col">
@@ -1462,10 +1444,6 @@
       <span>Athlete development</span>
     </div>
   </footer>
-
-  <div class="mobile-action-bar" aria-label="Mobile scheduling action">
-    <a class="button button-primary" href="https://calendly.com/austinlachapelle124/30min" data-calendly-popup>Schedule Training</a>
-  </div>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
