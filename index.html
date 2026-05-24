@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lachapelle Elite | Private Pitching &amp; Performance Coaching</title>
+<meta name="description" content="Pitching, strength, and performance coaching in Eugene, Oregon. A structured, parent-friendly training experience for developing athletes.">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17131c;
+    --plum: #2d153d;
+    --plum-deep: #120918;
+    --purple: #6d28d9;
+    --purple-soft: #8b5cf6;
+    --lavender: #eee7ff;
+    --paper: #fbfaf7;
+    --paper-2: #f2efe8;
+    --sage: #dfe8dc;
+    --sky: #dce9f5;
+    --gold: #d7b46a;
+    --muted: #675d70;
+    --line: rgba(23, 19, 28, 0.12);
+    --line-dark: rgba(255, 255, 255, 0.15);
+    --shadow: 0 22px 60px rgba(23, 19, 28, 0.14);
+    --radius: 8px;
+    --max: 1180px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .topbar {
+    background: var(--plum-deep);
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.84rem;
+    font-weight: 650;
+    letter-spacing: 0;
+  }
+
+  .topbar-inner {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .topbar strong {
+    color: #ffffff;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(251, 250, 247, 0.88);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(18px);
+  }
+
+  .nav {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    min-width: 0;
+  }
+
+  .brand img {
+    width: 96px;
+    height: 66px;
+    object-fit: contain;
+  }
+
+  .brand-copy {
+    display: grid;
+    gap: 0.05rem;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    font-weight: 850;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+
+  .brand-meta {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    font-size: 0.91rem;
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    color: var(--plum);
+  }
+
+  .button,
+  .nav-cta,
+  .program-cta {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.8rem 1.05rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .button:hover,
+  .nav-cta:hover,
+  .program-cta:hover {
+    transform: translateY(-1px);
+  }
+
+  .button-primary,
+  .nav-cta,
+  .program-cta {
+    background: var(--purple);
+    color: #ffffff;
+    box-shadow: 0 12px 24px rgba(109, 40, 217, 0.22);
+  }
+
+  .button-primary:hover,
+  .nav-cta:hover,
+  .program-cta:hover {
+    background: #5b21b6;
+    box-shadow: 0 16px 28px rgba(109, 40, 217, 0.25);
+  }
+
+  .button-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--line-dark);
+    color: #ffffff;
+  }
+
+  .button-secondary:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: clamp(510px, calc(100svh - 200px), 720px);
+    background:
+      linear-gradient(90deg, rgba(18, 9, 24, 0.96) 0%, rgba(18, 9, 24, 0.88) 45%, rgba(45, 21, 61, 0.62) 100%),
+      radial-gradient(circle at 82% 28%, rgba(139, 92, 246, 0.25), transparent 34%),
+      var(--plum-deep);
+    color: #ffffff;
+  }
+
+  .hero-bg-logo {
+    position: absolute;
+    right: max(-3vw, -40px);
+    top: 50%;
+    width: min(56vw, 700px);
+    opacity: 0.24;
+    transform: translateY(-50%);
+    filter: saturate(1.06) drop-shadow(0 24px 50px rgba(0, 0, 0, 0.36));
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 44%;
+    background: linear-gradient(0deg, rgba(18, 9, 24, 0.62), transparent);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+    padding: 4.8rem 0 4.2rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.86rem;
+    font-weight: 800;
+    margin-bottom: 1.1rem;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: var(--gold);
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    max-width: 780px;
+    margin-bottom: 1.25rem;
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    line-height: 0.96;
+    letter-spacing: 0;
+  }
+
+  .hero-lede {
+    max-width: 650px;
+    margin-bottom: 1.7rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(1.06rem, 1.7vw, 1.25rem);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    max-width: 740px;
+  }
+
+  .trust-chip {
+    border: 1px solid var(--line-dark);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.84);
+    border-radius: 999px;
+    padding: 0.52rem 0.72rem;
+    font-size: 0.88rem;
+    font-weight: 750;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .section.tight {
+    padding: 3.5rem 0;
+  }
+
+  .section-inner {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .intro-band {
+    background:
+      linear-gradient(135deg, rgba(109, 40, 217, 0.08), transparent 34%),
+      linear-gradient(180deg, var(--paper), var(--paper-2));
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.45fr);
+    gap: 1.25rem;
+    align-items: stretch;
+    position: relative;
+    z-index: 1;
+  }
+
+  .intro-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    padding: 1.55rem;
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(145deg, rgba(139, 92, 246, 0.16), transparent 44%),
+      var(--plum-deep);
+    color: #ffffff;
+    box-shadow: var(--shadow);
+  }
+
+  .intro-copy h2 {
+    color: #ffffff;
+    font-size: clamp(2rem, 3.6vw, 3.2rem);
+  }
+
+  .intro-copy .section-kicker {
+    color: var(--gold);
+  }
+
+  .intro-summary {
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 0;
+  }
+
+  .info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .section-kicker {
+    color: var(--purple);
+    font-size: 0.82rem;
+    font-weight: 850;
+    margin-bottom: 0.55rem;
+  }
+
+  h2 {
+    color: var(--ink);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.02;
+    letter-spacing: 0;
+    margin-bottom: 1rem;
+  }
+
+  .section-lede {
+    max-width: 680px;
+    color: var(--muted);
+    font-size: 1.06rem;
+  }
+
+  .info-card,
+  .program-card,
+  .process-card,
+  .faq-item {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 10px 30px rgba(23, 19, 28, 0.06);
+  }
+
+  .info-card {
+    position: relative;
+    min-height: 245px;
+    overflow: hidden;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.68)),
+      var(--paper);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 48px rgba(23, 19, 28, 0.12);
+  }
+
+  .info-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 5px;
+    background: var(--purple);
+  }
+
+  .info-card:nth-child(2)::before {
+    background: #66856e;
+  }
+
+  .info-card:nth-child(3)::before {
+    background: var(--gold);
+  }
+
+  .info-card::after {
+    content: attr(data-label);
+    position: absolute;
+    right: -0.25rem;
+    bottom: -2.1rem;
+    color: rgba(109, 40, 217, 0.08);
+    font-size: 6.8rem;
+    font-weight: 900;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .info-index {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    background: var(--plum-deep);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 900;
+    margin-bottom: 1.25rem;
+  }
+
+  .info-body {
+    position: relative;
+    z-index: 1;
+  }
+
+  .info-card strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.22rem;
+  }
+
+  .info-card p {
+    color: var(--muted);
+    font-size: 0.94rem;
+    margin-bottom: 0;
+  }
+
+  .info-meta {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    margin-top: 1.15rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.42rem 0.62rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 850;
+    background: rgba(255, 255, 255, 0.58);
+  }
+
+  .programs {
+    background: linear-gradient(180deg, var(--paper-2), var(--paper));
+  }
+
+  .section-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-note {
+    max-width: 340px;
+    color: var(--muted);
+    font-weight: 650;
+  }
+
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .program-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  .program-top {
+    min-height: 142px;
+    padding: 1.35rem;
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(135deg, rgba(109, 40, 217, 0.08), transparent),
+      var(--paper);
+  }
+
+  .program-card:nth-child(2) .program-top {
+    background:
+      linear-gradient(135deg, rgba(63, 114, 94, 0.14), transparent),
+      var(--sage);
+  }
+
+  .program-card:nth-child(3) .program-top {
+    background:
+      linear-gradient(135deg, rgba(215, 180, 106, 0.2), transparent),
+      var(--sky);
+  }
+
+  .program-tag {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.42rem 0.65rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 850;
+    margin-bottom: 1.2rem;
+  }
+
+  .program-top h3 {
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    line-height: 1.04;
+    margin-bottom: 0;
+  }
+
+  .program-body {
+    padding: 1.35rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .program-body p {
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .program-list {
+    display: grid;
+    gap: 0.7rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.4rem;
+  }
+
+  .program-list li {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 0.7rem;
+    color: #3b3343;
+    font-weight: 650;
+  }
+
+  .program-list li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-top: 0.55rem;
+    border-radius: 50%;
+    background: var(--purple);
+  }
+
+  .program-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+  }
+
+  .program-meta span {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.44rem 0.64rem;
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 800;
+  }
+
+  .process {
+    background: var(--plum-deep);
+    color: #ffffff;
+  }
+
+  .process h2,
+  .process .section-kicker {
+    color: #ffffff;
+  }
+
+  .process .section-lede {
+    color: rgba(255, 255, 255, 0.74);
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .process-card {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--line-dark);
+    box-shadow: none;
+    padding: 1.25rem;
+  }
+
+  .step {
+    color: var(--gold);
+    font-size: 0.86rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+
+  .process-card h3 {
+    font-size: 1.24rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .process-card p {
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 0;
+  }
+
+  .measure {
+    background: var(--paper);
+  }
+
+  .measure-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .measure-panel {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(135deg, rgba(109, 40, 217, 0.1), transparent 45%),
+      var(--sky);
+    padding: 1.25rem;
+  }
+
+  .metric-list {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .metric {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(23, 19, 28, 0.08);
+    padding: 0.9rem 1rem;
+    color: var(--muted);
+    font-weight: 750;
+  }
+
+  .metric strong {
+    color: var(--ink);
+  }
+
+  .parents {
+    background: linear-gradient(180deg, var(--paper-2), var(--paper));
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    padding: 1.2rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .faq-item p {
+    color: var(--muted);
+    margin-bottom: 0;
+  }
+
+  .cta-section {
+    background: var(--plum);
+    color: #ffffff;
+  }
+
+  .cta-box {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.07);
+    padding: clamp(1.4rem, 4vw, 2rem);
+  }
+
+  .cta-box h2 {
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+  }
+
+  .cta-box p {
+    color: rgba(255, 255, 255, 0.76);
+    margin-bottom: 0;
+  }
+
+  .site-footer {
+    background: var(--plum-deep);
+    color: rgba(255, 255, 255, 0.68);
+    padding: 3rem 0 2rem;
+  }
+
+  .footer-grid {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-brand img {
+    width: 120px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-brand p {
+    max-width: 320px;
+    margin-bottom: 0;
+  }
+
+  .footer-col h3 {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: grid;
+    gap: 0.45rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-col a {
+    color: rgba(255, 255, 255, 0.68);
+    text-decoration: none;
+  }
+
+  .footer-col a:hover {
+    color: #ffffff;
+  }
+
+  .footer-bottom {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 2rem auto 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line-dark);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.86rem;
+  }
+
+  .mobile-action-bar {
+    display: none;
+  }
+
+  @media (max-width: 920px) {
+    .topbar-inner {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .topbar-inner span:last-child {
+      display: none;
+    }
+
+    .nav {
+      min-height: 76px;
+    }
+
+    .brand img {
+      width: 78px;
+      height: 54px;
+    }
+
+    .brand-copy {
+      display: none;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .hero {
+      min-height: auto;
+    }
+
+    .hero-bg-logo {
+      width: 88vw;
+      right: -26vw;
+      top: 42%;
+      opacity: 0.18;
+    }
+
+    .hero-inner {
+      padding: 2.8rem 0 3.4rem;
+    }
+
+    .intro-grid,
+    .info-cards,
+    .program-grid,
+    .process-grid,
+    .measure-grid,
+    .faq-grid,
+    .cta-box,
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-head {
+      display: block;
+    }
+
+    .section-note {
+      max-width: 680px;
+    }
+
+    .intro-copy {
+      min-height: auto;
+    }
+
+    .cta-box {
+      gap: 1.2rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    html {
+      scroll-padding-top: 72px;
+    }
+
+    body {
+      padding-bottom: 88px;
+    }
+
+    .topbar-inner,
+    .nav,
+    .hero-inner,
+    .section-inner,
+    .footer-grid,
+    .footer-bottom {
+      width: min(100% - 28px, var(--max));
+    }
+
+    .topbar {
+      font-size: 0.78rem;
+    }
+
+    .topbar-inner {
+      min-height: 34px;
+    }
+
+    .site-header {
+      top: 0;
+    }
+
+    .nav {
+      min-height: 66px;
+      gap: 0.75rem;
+    }
+
+    .brand img {
+      width: 68px;
+      height: 48px;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .hero {
+      background:
+        linear-gradient(180deg, rgba(18, 9, 24, 0.98), rgba(45, 21, 61, 0.92)),
+        var(--plum-deep);
+    }
+
+    .hero::after {
+      height: 28%;
+    }
+
+    .hero-bg-logo {
+      width: 112vw;
+      right: -44vw;
+      top: 35%;
+      opacity: 0.12;
+    }
+
+    .hero-inner {
+      padding: 2rem 0 2.4rem;
+    }
+
+    h1 {
+      max-width: 360px;
+      font-size: clamp(2.25rem, 11.5vw, 3.05rem);
+      line-height: 1.02;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-lede {
+      max-width: 34rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1.1rem;
+    }
+
+    .eyebrow {
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-actions {
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .button {
+      min-height: 48px;
+    }
+
+    .button,
+    .program-cta {
+      width: 100%;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .trust-chip {
+      border-radius: 8px;
+      padding: 0.58rem 0.64rem;
+      font-size: 0.78rem;
+      line-height: 1.25;
+    }
+
+    .section {
+      padding: 2.8rem 0;
+    }
+
+    .section.tight {
+      padding: 2rem 0;
+    }
+
+    h2 {
+      font-size: clamp(1.85rem, 9vw, 2.35rem);
+      line-height: 1.08;
+    }
+
+    .section-head {
+      margin-bottom: 1.2rem;
+    }
+
+    .section-note,
+    .section-lede {
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .intro-copy {
+      padding: 1.15rem;
+      box-shadow: 0 18px 42px rgba(23, 19, 28, 0.16);
+    }
+
+    .intro-copy h2 {
+      font-size: clamp(1.78rem, 8vw, 2.35rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .intro-summary {
+      font-size: 0.96rem;
+      line-height: 1.45;
+    }
+
+    .info-card {
+      min-height: auto;
+    }
+
+    .info-card::after {
+      display: none;
+    }
+
+    .info-index {
+      width: 38px;
+      height: 38px;
+      margin-bottom: 0.85rem;
+      font-size: 0.78rem;
+    }
+
+    .info-card strong {
+      font-size: 1.08rem;
+    }
+
+    .info-meta {
+      margin-top: 0.9rem;
+      font-size: 0.76rem;
+    }
+
+    .program-grid {
+      gap: 0.9rem;
+    }
+
+    .program-card {
+      box-shadow: 0 12px 28px rgba(23, 19, 28, 0.08);
+    }
+
+    .program-top {
+      min-height: auto;
+      padding: 1rem;
+    }
+
+    .program-tag {
+      margin-bottom: 0.75rem;
+      font-size: 0.74rem;
+    }
+
+    .program-top h3 {
+      font-size: clamp(1.45rem, 7.2vw, 1.9rem);
+    }
+
+    .program-body p {
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .program-list {
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .program-list li {
+      grid-template-columns: 13px 1fr;
+      gap: 0.5rem;
+      font-size: 0.91rem;
+      line-height: 1.35;
+    }
+
+    .program-list li::before {
+      width: 7px;
+      height: 7px;
+      margin-top: 0.45rem;
+    }
+
+    .program-meta {
+      gap: 0.42rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .program-meta span {
+      padding: 0.34rem 0.5rem;
+      font-size: 0.76rem;
+    }
+
+    .program-cta {
+      min-height: 48px;
+      font-size: 0.92rem;
+      padding: 0.78rem 0.9rem;
+    }
+
+    .process-grid {
+      gap: 0.75rem;
+    }
+
+    .process-card,
+    .faq-item,
+    .measure-panel {
+      box-shadow: 0 10px 26px rgba(23, 19, 28, 0.08);
+    }
+
+    .metric {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding: 0.78rem 0.85rem;
+    }
+
+    .cta-box {
+      text-align: left;
+      padding: 1.1rem;
+    }
+
+    .site-footer {
+      padding-bottom: 6rem;
+    }
+
+    .program-top,
+    .program-body,
+    .info-card,
+    .process-card,
+    .faq-item {
+      padding: 1rem;
+    }
+
+    .mobile-action-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 40;
+      display: block;
+      padding: 0.75rem 0.9rem calc(0.75rem + env(safe-area-inset-bottom));
+      background: rgba(18, 9, 24, 0.92);
+      border-top: 1px solid var(--line-dark);
+      backdrop-filter: blur(16px);
+    }
+
+    .mobile-action-bar .button {
+      box-shadow: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span><strong>Athlete development</strong> in Eugene, Oregon</span>
+      <span>Pitching &bull; Strength &bull; Confidence &bull; Clear plans for families</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#">
+        <img src="LachElitePurp-2.png" alt="Lachapelle Elite logo">
+        <span class="brand-copy">
+          <span class="brand-name">Lachapelle Elite</span>
+          <span class="brand-meta">Pitching &amp; performance coaching</span>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#parents">Parents</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+      </ul>
+      <a class="nav-cta" href="https://calendly.com/austinlachapelle124/30min" data-calendly-popup>Book Session</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-bg-logo" src="LachElitePurp-2.png" alt="">
+      <div class="hero-inner">
+        <div class="eyebrow">Private coaching for developing athletes</div>
+        <h1 id="hero-title">Varsity and collegiate level pitching programs</h1>
+        <p class="hero-lede">Lachapelle Elite gives young athletes focused pitching, strength, and conditioning work in a calm 1-on-1 setting, with a clear plan parents can understand and athletes can trust.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://calendly.com/austinlachapelle124/30min" data-calendly-popup>Schedule Training</a>
+          <a class="button button-secondary" href="#programs">View Programs</a>
+        </div>
+        <div class="trust-row" aria-label="Coaching highlights">
+          <span class="trust-chip">1-on-1 attention</span>
+          <span class="trust-chip">$75 per session</span>
+          <span class="trust-chip">Pitching, strength, and group options</span>
+          <span class="trust-chip">Parent-friendly progress notes</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight intro-band" aria-label="Family-first coaching">
+      <div class="section-inner intro-grid">
+        <div class="intro-copy">
+          <div class="section-kicker">Why families choose Lachapelle Elite</div>
+          <h2>Optimal training with custom software, measured goals, and consistent results</h2>
+          <p class="intro-summary">A cleaner training experience for families who want structure, accountability, and steady development.</p>
+        </div>
+        <div class="info-cards">
+          <article class="info-card" data-label="01">
+            <div class="info-body">
+              <span class="info-index">01</span>
+              <strong>Clear next steps</strong>
+              <p>Every athlete forms a unique profile, built around mechanical priorities and clear goals to strive toward.</p>
+            </div>
+            <span class="info-meta">Session roadmap</span>
+          </article>
+          <article class="info-card" data-label="02">
+            <div class="info-body">
+              <span class="info-index">02</span>
+              <strong>Healthy workload</strong>
+              <p>Pitching work is paired with arm care, movement quality, and realistic guidance for the athlete's season.</p>
+            </div>
+            <span class="info-meta">Workload context</span>
+          </article>
+          <article class="info-card" data-label="03">
+            <div class="info-body">
+              <span class="info-index">03</span>
+              <strong>Parent visibility</strong>
+              <p>Families get plain-language feedback on progress, goals, and what the athlete needs most next.</p>
+            </div>
+            <span class="info-meta">Progress notes</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section programs" id="programs">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Training programs</div>
+            <h2>Focused sessions for where your athlete is now.</h2>
+          </div>
+          <p class="section-note">Choose the training format that fits your athlete: private skill work, performance training, or group pitching development.</p>
+        </div>
+
+        <div class="program-grid">
+          <article class="program-card">
+            <div class="program-top">
+              <span class="program-tag">Pitching</span>
+              <h3>Pitching Development</h3>
+            </div>
+            <div class="program-body">
+              <p>Hands-on pitching work for athletes who need better movement, command, rhythm, and mound confidence.</p>
+              <ul class="program-list">
+                <li>Delivery assessment and efficient movement cues</li>
+                <li>Arm care, warm-up habits, and workload guidance</li>
+                <li>Command, pitch feel, and competitive routines</li>
+                <li>Simple take-home priorities after each session</li>
+              </ul>
+              <div class="program-meta">
+                <span>Private 1:1</span>
+                <span>$75/session</span>
+                <span>Development plan</span>
+              </div>
+              <a class="program-cta" href="https://calendly.com/austinlachapelle124/30min" data-calendly-popup>Schedule Pitching</a>
+            </div>
+          </article>
+
+          <article class="program-card">
+            <div class="program-top">
+              <span class="program-tag">Strength and conditioning</span>
+              <h3>Performance Training</h3>
+            </div>
+            <div class="program-body">
+              <p>Strength, mobility, conditioning, and nutrition habits that support athletic development and better movement on the field.</p>
+              <ul class="program-list">
+                <li>Age-appropriate strength and movement patterns</li>
+                <li>Mobility, rotation, balance, and body control</li>
+                <li>Conditioning that supports sport performance</li>
+                <li>Nutrition and meal-prep guidance for busy families</li>
+              </ul>
+              <div class="program-meta">
+                <span>Private 1:1</span>
+                <span>$75/session</span>
+                <span>Healthy habits</span>
+              </div>
+              <a class="program-cta" href="https://calendly.com/austinlachapelle124/strength-training" data-calendly-popup data-calendly-strength>Schedule Training</a>
+            </div>
+          </article>
+
+          <article class="program-card">
+            <div class="program-top">
+              <span class="program-tag">Group pitching</span>
+              <h3>Group Pitching Program</h3>
+            </div>
+            <div class="program-body">
+              <p>A small-group pitching setting for athletes who want structured reps, peer energy, and clear coaching priorities.</p>
+              <ul class="program-list">
+                <li>Shared skill work with individual coaching moments</li>
+                <li>Mechanical focus, command work, and throwing routines</li>
+                <li>Competitive drills that build mound confidence</li>
+                <li>Clear goals athletes can carry into practice</li>
+              </ul>
+              <div class="program-meta">
+                <span>Group format</span>
+                <span>Pitching focus</span>
+                <span>Structured reps</span>
+              </div>
+              <a class="program-cta" href="https://calendly.com/austinlachapelle124/group-pitching-program" data-calendly-popup data-calendly-group>Schedule Group Pitching</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="section-inner">
+        <div class="section-kicker">How it works</div>
+        <h2>A simple process athletes can repeat.</h2>
+        <p class="section-lede">Great development feels organized. The goal is to help athletes understand their body, practice with intention, and build confidence from consistent work.</p>
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="step">Step 01</div>
+            <h3>Assess</h3>
+            <p>We look at current movement, goals, training history, and season demands before choosing priorities.</p>
+          </article>
+          <article class="process-card">
+            <div class="step">Step 02</div>
+            <h3>Train</h3>
+            <p>Sessions stay focused on quality reps, useful cues, and the few changes that matter most right now.</p>
+          </article>
+          <article class="process-card">
+            <div class="step">Step 03</div>
+            <h3>Review</h3>
+            <p>Families leave with clear takeaways so practice between sessions has structure and purpose.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section measure" id="software">
+      <div class="section-inner measure-grid">
+        <div>
+          <div class="section-kicker">Measured progress</div>
+          <h2>Useful feedback, not more noise.</h2>
+          <p class="section-lede">Video review, training notes, and custom software support the coaching process, but the athlete always gets the information in a simple, actionable way.</p>
+        </div>
+        <div class="measure-panel">
+          <strong>What parents can expect</strong>
+          <div class="metric-list">
+            <div class="metric"><span>Session focus</span><strong>Clear priority</strong></div>
+            <div class="metric"><span>Progress tracking</span><strong>Plain language</strong></div>
+            <div class="metric"><span>Training load</span><strong>Age-aware</strong></div>
+            <div class="metric"><span>Home practice</span><strong>Simple plan</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section parents" id="parents">
+      <div class="section-inner">
+        <div class="section-kicker">For parents</div>
+        <h2>Answers before you book.</h2>
+        <p class="section-lede">The experience is designed to feel professional, organized, and welcoming from the first session.</p>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>Is this only for advanced athletes?</h3>
+            <p>No. Sessions are matched to the athlete's current level, goals, and readiness. The work should challenge them without overwhelming them.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What should athletes bring?</h3>
+            <p>Bring normal training gear, water, and any relevant baseball equipment. If there is a recent injury or workload concern, bring that context too.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Will parents know what happened in the session?</h3>
+            <p>Yes. The goal is to keep feedback clear enough that families understand what improved and what to focus on next.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Can pitching and strength work connect?</h3>
+            <p>Yes. Pitching mechanics and physical preparation are related, so the plan can connect movement, strength, and throwing goals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="schedule">
+      <div class="section-inner">
+        <div class="cta-box">
+          <div>
+            <div class="section-kicker">Start training</div>
+            <h2>Book a training session with a clear plan.</h2>
+            <p>Choose pitching, performance, or group pitching and start with focused coaching built around your athlete.</p>
+          </div>
+          <a class="button button-primary" href="https://calendly.com/austinlachapelle124/30min" data-calendly-popup>Schedule Training</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="LachElitePurp-2.png" alt="Lachapelle Elite logo">
+        <p>Pitching, strength, and conditioning coaching in Eugene, Oregon. Built for athletes and clear for families.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Programs</h3>
+        <ul>
+          <li><a href="#programs">Pitching Development</a></li>
+          <li><a href="#programs">Performance Training</a></li>
+          <li><a href="#programs">Group Pitching Program</a></li>
+          <li><a href="#process">Coaching Process</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Parents</h3>
+        <ul>
+          <li><a href="#parents">What to Expect</a></li>
+          <li><a href="#software">Progress Notes</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Book</h3>
+        <ul>
+          <li><a href="https://calendly.com/austinlachapelle124/30min" data-calendly-popup>Pitching Session</a></li>
+          <li><a href="https://calendly.com/austinlachapelle124/strength-training" data-calendly-popup data-calendly-strength>Strength Session</a></li>
+          <li><a href="https://calendly.com/austinlachapelle124/group-pitching-program" data-calendly-popup data-calendly-group>Group Pitching</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Lachapelle Elite &middot; Eugene, OR</span>
+      <span>Athlete development</span>
+    </div>
+  </footer>
+
+  <div class="mobile-action-bar" aria-label="Mobile scheduling action">
+    <a class="button button-primary" href="https://calendly.com/austinlachapelle124/30min" data-calendly-popup>Schedule Training</a>
+  </div>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var defaultUrl = 'https://calendly.com/austinlachapelle124/30min';
+    var strengthUrl = 'https://calendly.com/austinlachapelle124/strength-training';
+    var groupUrl = 'https://calendly.com/austinlachapelle124/group-pitching-program';
+    var calendlyLinks = document.querySelectorAll('[data-calendly-popup]');
+
+    calendlyLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        var url = link.hasAttribute('data-calendly-group') ? groupUrl : (link.hasAttribute('data-calendly-strength') ? strengthUrl : defaultUrl);
+
+        if (window.Calendly) {
+          window.Calendly.initPopupWidget({ url: url });
+        } else {
+          window.location.href = url;
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
