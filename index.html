@@ -7,7 +7,7 @@
 <meta name="description" content="Private pitching, strength, and group programs in Eugene led by Austin Lachapelle, a former WCAL Pitcher of the Year and varsity pitching coach.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Lachapelle Elite">
-<meta name="keywords" content="Eugene pitching coach, pitching lessons Eugene Oregon, baseball pitching training, youth pitching coach, athlete development Eugene, strength training for baseball players, Lachapelle Elite">
+<meta name="keywords" content="Eugene pitching coach, pitching lessons Eugene Oregon, baseball pitching training, youth pitching coach, athlete development Eugene, PitchLab mechanical analysis, pitching biometrics intake, strength training for baseball players, Lachapelle Elite">
 <meta name="geo.region" content="US-OR">
 <meta name="geo.placename" content="Eugene, Oregon">
 <meta name="theme-color" content="#120918">
@@ -20,14 +20,14 @@
 <meta property="og:title" content="Lachapelle Elite | Eugene Pitching Coach &amp; Training Programs">
 <meta property="og:description" content="Private pitching, strength, and group programs in Eugene led by Austin Lachapelle, a former WCAL Pitcher of the Year and varsity pitching coach.">
 <meta property="og:url" content="https://lachelitepurp.vercel.app/">
-<meta property="og:image" content="https://lachelitepurp.vercel.app/coach-hero-running.jpg">
-<meta property="og:image:width" content="2200">
-<meta property="og:image:height" content="1466">
-<meta property="og:image:alt" content="Austin Lachapelle on the field during baseball training">
+<meta property="og:image" content="https://lachelitepurp.vercel.app/lachapelle-elite-logo.png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="490">
+<meta property="og:image:alt" content="Lachapelle Elite logo">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lachapelle Elite | Eugene Pitching Coach &amp; Training Programs">
 <meta name="twitter:description" content="Private pitching, strength, and group programs in Eugene led by Austin Lachapelle, a former WCAL Pitcher of the Year and varsity pitching coach.">
-<meta name="twitter:image" content="https://lachelitepurp.vercel.app/coach-hero-running.jpg">
+<meta name="twitter:image" content="https://lachelitepurp.vercel.app/lachapelle-elite-logo.png">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script type="application/ld+json">
 {
@@ -112,7 +112,7 @@
       "@id": "https://lachelitepurp.vercel.app/#austin-lachapelle",
       "name": "Austin Lachapelle",
       "jobTitle": "Pitching Coach",
-      "image": "https://lachelitepurp.vercel.app/coach-mound-visit.jpg",
+      "image": "https://lachelitepurp.vercel.app/austin-lachapelle-award.jpg",
       "worksFor": {
         "@id": "https://lachelitepurp.vercel.app/#business"
       },
@@ -122,6 +122,10 @@
       ],
       "knowsAbout": [
         "Pitching mechanics",
+        "PitchLab mechanical analysis",
+        "Athlete onboarding",
+        "Pitching biometrics intake",
+        "Personalized training systems",
         "Baseball player development",
         "Pitcher workload",
         "Recruiting preparation",
@@ -1081,26 +1085,31 @@
 
   .coach-lockup {
     display: grid;
-    grid-template-columns: 92px 1fr;
+    grid-template-columns: 116px 1fr;
     gap: 1rem;
     align-items: center;
     margin-bottom: 1.4rem;
   }
 
-  .coach-logo-mark {
-    width: 92px;
-    height: 92px;
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+  .coach-award-mark {
+    position: relative;
+    width: 116px;
+    height: 204px;
+    display: block;
+    overflow: hidden;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.36);
     border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.22);
   }
 
-  .coach-logo-mark img {
-    width: 78px;
-    height: 78px;
-    object-fit: contain;
+  .coach-award-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+    border-radius: calc(var(--radius) - 3px);
   }
 
   .coach-card .section-kicker,
@@ -1337,7 +1346,7 @@
 
   .measure-proof {
     display: grid;
-    gap: 0.75rem;
+    gap: 0.7rem;
     margin-top: 1.55rem;
   }
 
@@ -1346,7 +1355,7 @@
     border-left: 4px solid var(--purple);
     border-radius: var(--radius);
     background: rgba(255, 255, 255, 0.62);
-    padding: 0.95rem 1rem;
+    padding: 0.9rem 1rem;
   }
 
   .measure-proof-item strong {
@@ -1434,10 +1443,22 @@
   }
 
   .snapshot {
+    position: relative;
+    overflow: hidden;
     border: 1px solid rgba(23, 19, 28, 0.08);
     border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.72);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.62));
     padding: 0.82rem;
+  }
+
+  .snapshot::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--gold));
+    opacity: 0.78;
   }
 
   .snapshot span {
@@ -1491,35 +1512,55 @@
 
   .progress-track span {
     display: block;
-    width: 72%;
+    width: 78%;
     height: 100%;
     border-radius: inherit;
     background: linear-gradient(90deg, var(--gold), var(--purple-soft));
   }
 
-  .parent-note-list {
+  .system-list {
     display: grid;
-    gap: 0.65rem;
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
   }
 
-  .parent-note-list li {
-    display: grid;
-    grid-template-columns: 16px 1fr;
-    gap: 0.55rem;
-    color: #3b3343;
-    font-weight: 700;
+  .system-item {
+    position: relative;
+    min-height: 132px;
+    border: 1px solid rgba(23, 19, 28, 0.1);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.68);
+    padding: 1rem;
+    box-shadow: 0 12px 28px rgba(23, 19, 28, 0.06);
   }
 
-  .parent-note-list li::before {
+  .system-item::before {
     content: "";
-    width: 8px;
-    height: 8px;
-    margin-top: 0.58rem;
-    border-radius: 50%;
+    display: block;
+    width: 26px;
+    height: 4px;
+    border-radius: 999px;
     background: var(--purple);
+    margin-bottom: 0.72rem;
+  }
+
+  .system-item:nth-child(2)::before {
+    background: var(--gold);
+  }
+
+  .system-item strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.98rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .system-item p {
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 650;
+    margin-bottom: 0;
   }
 
   .metric {
@@ -2009,6 +2050,10 @@
       gap: 0.55rem;
     }
 
+    .system-list {
+      grid-template-columns: 1fr;
+    }
+
     .measure-panel-header {
       align-items: stretch;
       flex-direction: column;
@@ -2045,18 +2090,14 @@
     }
 
     .coach-lockup {
-      grid-template-columns: 72px 1fr;
+      grid-template-columns: 88px 1fr;
       gap: 0.8rem;
     }
 
-    .coach-logo-mark {
-      width: 72px;
-      height: 72px;
-    }
-
-    .coach-logo-mark img {
-      width: 62px;
-      height: 62px;
+    .coach-award-mark {
+      width: 88px;
+      height: 154px;
+      padding: 4px;
     }
 
     .coach-photo-frame img {
@@ -2073,6 +2114,741 @@
 
   }
 
+  @media (max-width: 560px) {
+    body {
+      overflow-x: hidden;
+      background: #fbfaf7;
+    }
+
+    .topbar {
+      font-size: 0.76rem;
+    }
+
+    .topbar-inner {
+      min-height: auto;
+      padding: 0.55rem 0;
+      line-height: 1.25;
+    }
+
+    .topbar-inner span:first-child {
+      max-width: 22rem;
+    }
+
+    .topbar-inner strong {
+      display: inline;
+      font-size: 0.8rem;
+    }
+
+    .site-header {
+      position: static;
+      background:
+        linear-gradient(180deg, rgba(45, 21, 61, 0.98), rgba(18, 9, 24, 0.98)),
+        var(--plum-deep);
+      border-top: 1px solid rgba(139, 92, 246, 0.42);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+      min-height: auto;
+      gap: 0.72rem;
+      padding: 0.74rem 0 0.82rem;
+    }
+
+    .brand {
+      position: relative;
+      display: block;
+      width: 100%;
+      min-height: 66px;
+      gap: 0.68rem;
+    }
+
+    .brand img {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 90px;
+      height: 64px;
+      flex: 0 0 auto;
+      transform: translateY(-50%);
+    }
+
+    .brand-copy {
+      position: absolute;
+      display: grid;
+      gap: 0.14rem;
+      left: 50%;
+      top: 50%;
+      width: min(230px, calc(100% - 104px));
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .brand-name {
+      font-size: 1.02rem;
+      text-align: center;
+    }
+
+    .brand-meta {
+      font-size: clamp(0.68rem, 2.7vw, 0.76rem);
+      line-height: 1.25;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.48rem;
+      width: 100%;
+      overflow: visible;
+      padding: 0.05rem 0 0.1rem;
+    }
+
+    .nav-links li {
+      flex: 0 0 auto;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: rgba(255, 255, 255, 0.82);
+      padding: 0.44rem 0.6rem;
+      font-size: 0.78rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .hero {
+      min-height: auto;
+      background: var(--plum-deep);
+    }
+
+    .hero-photo {
+      object-position: 82% 42%;
+      opacity: 0.74;
+      transform: scale(1.03);
+      filter: saturate(1) contrast(1.04);
+    }
+
+    .hero::before {
+      background:
+        linear-gradient(180deg, rgba(18, 9, 24, 0.48) 0%, rgba(18, 9, 24, 0.74) 45%, rgba(18, 9, 24, 0.96) 100%),
+        linear-gradient(90deg, rgba(18, 9, 24, 0.88), rgba(18, 9, 24, 0.2));
+    }
+
+    .hero::after {
+      height: 34%;
+      background: linear-gradient(0deg, rgba(18, 9, 24, 0.82), transparent);
+    }
+
+    .hero-bg-logo {
+      width: min(68vw, 300px);
+      right: -14vw;
+      top: 24%;
+      opacity: 1;
+    }
+
+    .hero-inner {
+      padding: 2.75rem 0 2.65rem;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      max-width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.42rem 0.6rem;
+      margin-bottom: 0.95rem;
+      font-size: 0.76rem;
+      line-height: 1.2;
+    }
+
+    .eyebrow::before {
+      width: 7px;
+      height: 7px;
+    }
+
+    h1 {
+      max-width: 21rem;
+      font-size: clamp(2.16rem, 10.2vw, 2.78rem);
+      line-height: 1.04;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .hero-lede {
+      max-width: 23rem;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.98rem;
+      line-height: 1.56;
+      margin-bottom: 1.22rem;
+    }
+
+    .hero-actions {
+      gap: 0.7rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .button {
+      min-height: 50px;
+      border-radius: var(--radius);
+      padding: 0.82rem 1rem;
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .trust-row {
+      grid-template-columns: 1fr;
+      gap: 0.48rem;
+      max-width: 23rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .trust-chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.52rem;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.58rem 0.68rem;
+      font-size: 0.8rem;
+      line-height: 1.28;
+      text-align: center;
+    }
+
+    .trust-chip::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .section {
+      padding: 3.3rem 0;
+    }
+
+    .section.tight {
+      padding: 2.7rem 0;
+    }
+
+    .section-kicker {
+      font-size: 0.76rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.96rem, 8.8vw, 2.42rem);
+      line-height: 1.08;
+      margin-bottom: 0.85rem;
+      text-wrap: balance;
+    }
+
+    .section-note,
+    .section-lede {
+      font-size: 0.98rem;
+      line-height: 1.58;
+    }
+
+    .intro-band {
+      background:
+        linear-gradient(180deg, #f7f3ec 0%, var(--paper) 100%);
+    }
+
+    .intro-grid {
+      gap: 1rem;
+    }
+
+    .intro-copy {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 1.2rem;
+      box-shadow: 0 18px 38px rgba(23, 19, 28, 0.14);
+      text-align: center;
+    }
+
+    .intro-copy h2 {
+      font-size: clamp(1.82rem, 8.4vw, 2.32rem);
+      line-height: 1.07;
+    }
+
+    .info-cards {
+      gap: 0.78rem;
+    }
+
+    .info-card {
+      min-height: auto;
+      border-left: 4px solid var(--purple);
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 12px 28px rgba(23, 19, 28, 0.08);
+    }
+
+    .info-card:nth-child(2) {
+      border-left-color: #66856e;
+    }
+
+    .info-card:nth-child(3) {
+      border-left-color: var(--gold);
+    }
+
+    .info-card::before,
+    .info-card::after,
+    .info-visual-frame,
+    .info-meta {
+      display: none;
+    }
+
+    .info-index {
+      width: 34px;
+      height: 34px;
+      margin-bottom: 0.75rem;
+      font-size: 0.74rem;
+    }
+
+    .info-card strong {
+      font-size: 1.08rem;
+      margin-bottom: 0.32rem;
+    }
+
+    .info-card p {
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .programs {
+      background: linear-gradient(180deg, #f4f0e8, #fbfaf7);
+    }
+
+    .section-head {
+      margin-bottom: 1.25rem;
+    }
+
+    .programs .section-head,
+    .process > .section-inner > .section-kicker,
+    .process > .section-inner > h2,
+    .process > .section-inner > .section-lede,
+    .measure-copy > .section-kicker,
+    .measure-copy > h2,
+    .measure-copy > .section-lede,
+    .parents > .section-inner > .section-kicker,
+    .parents > .section-inner > h2,
+    .parents > .section-inner > .section-lede {
+      text-align: center;
+    }
+
+    .programs .section-note,
+    .process > .section-inner > .section-lede,
+    .measure-copy > .section-lede,
+    .parents > .section-inner > .section-lede {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .program-grid {
+      gap: 1rem;
+    }
+
+    .program-card {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 16px 34px rgba(23, 19, 28, 0.09);
+    }
+
+    .program-top {
+      padding: 1.05rem;
+    }
+
+    .program-tag {
+      margin-bottom: 0.78rem;
+      padding: 0.36rem 0.56rem;
+      font-size: 0.72rem;
+    }
+
+    .program-top h3 {
+      font-size: clamp(1.52rem, 7vw, 1.95rem);
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    .program-body {
+      padding: 1.05rem;
+    }
+
+    .program-body p {
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .program-list {
+      gap: 0.56rem;
+    }
+
+    .program-list li {
+      font-size: 0.91rem;
+      line-height: 1.42;
+    }
+
+    .program-meta {
+      flex-wrap: nowrap;
+      gap: 0.42rem;
+      overflow-x: auto;
+      padding-bottom: 0.08rem;
+      scrollbar-width: none;
+    }
+
+    .program-meta::-webkit-scrollbar {
+      display: none;
+    }
+
+    .program-meta span {
+      flex: 0 0 auto;
+      font-size: 0.74rem;
+      white-space: nowrap;
+    }
+
+    .program-cta {
+      min-height: 50px;
+      border-radius: var(--radius);
+      font-size: 0.92rem;
+    }
+
+    .coach-cred::before {
+      background-size: 34px 34px;
+      opacity: 0.22;
+    }
+
+    .coach-grid {
+      gap: 1rem;
+    }
+
+    .coach-card {
+      padding: 1.15rem;
+    }
+
+    .coach-card::before {
+      inset: 10px;
+    }
+
+    .coach-lockup {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
+      text-align: center;
+    }
+
+    .coach-award-mark {
+      justify-self: center;
+      width: min(42vw, 124px);
+      height: 194px;
+      padding: 5px;
+    }
+
+    .coach-card h2 {
+      font-size: clamp(1.9rem, 8.6vw, 2.35rem);
+    }
+
+    .coach-title {
+      font-size: 0.94rem;
+      line-height: 1.35;
+    }
+
+    .coach-photo-frame {
+      margin-bottom: 1rem;
+    }
+
+    .coach-photo-frame img {
+      aspect-ratio: 4 / 3;
+      object-position: 54% 45%;
+    }
+
+    .coach-photo-frame figcaption {
+      position: static;
+      width: auto;
+      max-width: none;
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.55rem 0.65rem;
+      font-size: 0.72rem;
+    }
+
+    .coach-summary {
+      font-size: 0.94rem;
+      line-height: 1.56;
+    }
+
+    .coach-stat-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.48rem;
+    }
+
+    .coach-stat {
+      padding: 0.68rem 0.5rem;
+      text-align: center;
+    }
+
+    .coach-stat strong {
+      font-size: 1.08rem;
+    }
+
+    .coach-stat span {
+      font-size: 0.68rem;
+      line-height: 1.2;
+    }
+
+    .coach-lens-list li {
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .credential-grid {
+      gap: 0.78rem;
+    }
+
+    .credential-card {
+      padding: 0.95rem;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 10px 24px rgba(23, 19, 28, 0.07);
+    }
+
+    .credential-card strong {
+      font-size: 1.02rem;
+    }
+
+    .credential-card p {
+      font-size: 0.9rem;
+      line-height: 1.48;
+    }
+
+    .credential-note {
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .process-grid {
+      gap: 0.78rem;
+      margin-top: 1.35rem;
+    }
+
+    .process-card {
+      border-left: 4px solid rgba(215, 180, 106, 0.62);
+      padding: 1rem;
+    }
+
+    .step {
+      font-size: 0.76rem;
+      margin-bottom: 0.68rem;
+    }
+
+    .process-card h3 {
+      font-size: 1.14rem;
+    }
+
+    .process-card p {
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .measure-grid {
+      gap: 1.2rem;
+    }
+
+    .measure-proof {
+      gap: 0.68rem;
+      margin-top: 1.1rem;
+    }
+
+    .measure-proof-item {
+      background: rgba(255, 255, 255, 0.86);
+      padding: 0.9rem;
+    }
+
+    .measure-proof-item div span {
+      font-size: 0.88rem;
+      line-height: 1.46;
+    }
+
+    .measure-panel {
+      padding: 0.95rem;
+      box-shadow: 0 14px 32px rgba(23, 19, 28, 0.1);
+    }
+
+    .measure-panel-header {
+      gap: 0.72rem;
+      padding-bottom: 0.85rem;
+    }
+
+    .measure-panel-title strong {
+      font-size: 1.28rem;
+    }
+
+    .measure-status {
+      font-size: 0.72rem;
+      padding: 0.38rem 0.58rem;
+    }
+
+    .snapshot {
+      padding: 0.76rem;
+    }
+
+    .snapshot strong {
+      font-size: 0.94rem;
+    }
+
+    .focus-card {
+      padding: 1rem;
+    }
+
+    .focus-card strong {
+      font-size: 1.08rem;
+    }
+
+    .focus-card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .system-item {
+      min-height: auto;
+      padding: 0.9rem;
+    }
+
+    .system-item p {
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .faq-grid {
+      gap: 0.78rem;
+      margin-top: 1.2rem;
+    }
+
+    .faq-item {
+      padding: 0.95rem;
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      line-height: 1.48;
+    }
+
+    .cta-box {
+      padding: 1.15rem;
+      border-radius: var(--radius);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(1.78rem, 8vw, 2.2rem);
+    }
+
+    .cta-box p {
+      font-size: 0.94rem;
+      line-height: 1.52;
+    }
+
+    .site-footer {
+      padding: 2.5rem 0 1.6rem;
+    }
+
+    .footer-grid {
+      gap: 1.4rem;
+    }
+
+    .footer-brand img {
+      width: 96px;
+    }
+
+    .footer-brand p,
+    .footer-col a,
+    .footer-bottom {
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+      display: grid;
+      gap: 0.4rem;
+      margin-top: 1.5rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .topbar-inner,
+    .nav,
+    .hero-inner,
+    .section-inner,
+    .footer-grid,
+    .footer-bottom {
+      width: min(100% - 24px, var(--max));
+    }
+
+    h1 {
+      font-size: 2.06rem;
+    }
+
+    .brand {
+      min-height: 66px;
+    }
+
+    .brand img {
+      width: 72px;
+      height: 52px;
+    }
+
+    .brand-copy {
+      width: min(210px, calc(100% - 92px));
+    }
+
+    .brand-meta {
+      font-size: 0.66rem;
+    }
+
+    h2 {
+      font-size: 1.86rem;
+    }
+
+    .hero-lede,
+    .section-note,
+    .section-lede {
+      font-size: 0.94rem;
+    }
+
+    .trust-chip {
+      font-size: 0.76rem;
+    }
+
+    .coach-stat span {
+      font-size: 0.64rem;
+    }
+
+    .coach-award-mark {
+      width: 116px;
+      height: 182px;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -2086,7 +2862,7 @@
 <body>
   <div class="topbar">
     <div class="topbar-inner">
-      <span><strong>Athlete development</strong> in Eugene, Oregon</span>
+      <span><strong>Athletic Development</strong> in Eugene, Oregon</span>
       <span>Pitching &bull; Strength &bull; Confidence &bull; Clear plans for families</span>
     </div>
   </div>
@@ -2097,7 +2873,7 @@
         <img src="./lachapelle-elite-logo.png" onerror="this.onerror=null;this.src='./LachElitePurp-2.png';" alt="Lachapelle Elite logo">
         <span class="brand-copy">
           <span class="brand-name">Lachapelle Elite</span>
-          <span class="brand-meta">Pitching &amp; performance coaching</span>
+          <span class="brand-meta">Pitching &amp; Performance Coaching</span>
         </span>
       </a>
       <ul class="nav-links">
@@ -2268,11 +3044,11 @@
       <div class="section-inner coach-grid">
         <div class="coach-card">
           <div class="coach-lockup">
-            <span class="coach-logo-mark">
-              <img src="./lachapelle-elite-logo.png" onerror="this.onerror=null;this.src='./LachElitePurp-2.png';" alt="">
+            <span class="coach-award-mark">
+              <img src="./austin-lachapelle-award.jpg" alt="Austin Lachapelle holding an All-League certificate" loading="lazy" decoding="async">
             </span>
             <div>
-              <div class="section-kicker">Coach credentials</div>
+              <div class="section-kicker">Coaching Credentials</div>
               <h2>Led by Austin Lachapelle.</h2>
               <div class="coach-title">Pitching coach, former college pitcher, and varsity coach</div>
             </div>
@@ -2378,64 +3154,75 @@
     <section class="section measure" id="software">
       <div class="section-inner measure-grid">
         <div class="measure-copy">
-          <div class="section-kicker">Measured progress</div>
-          <h2>Useful feedback, not more noise.</h2>
-          <p class="section-lede">Video review, training notes, and custom software support the coaching process, but the athlete always gets the information in a simple, actionable way.</p>
-          <div class="measure-proof" aria-label="How feedback stays clear">
+          <div class="section-kicker">Athlete onboarding</div>
+          <h2>A complete intake, analysis, and training system.</h2>
+          <p class="section-lede">Every athlete starts with a clear profile: simple biometrics, PitchLab Software review, personal write-ups, and training systems that turn assessment into weekly work.</p>
+          <div class="measure-proof" aria-label="Athlete onboarding details">
             <div class="measure-proof-item">
               <div>
-                <strong>One clear focus</strong>
-                <span>Each update starts with the priority that matters most right now.</span>
+                <strong>Athlete onboarding process</strong>
+                <span>Goals, training history, season context, and current throwing workload are gathered before priorities are set.</span>
               </div>
             </div>
             <div class="measure-proof-item">
               <div>
-                <strong>Progress families can follow</strong>
-                <span>Notes, goals, and video clips stay organized in plain language.</span>
+                <strong>Simple biometrics intake</strong>
+                <span>Height, weight, mobility notes, arm-care needs, and baseline movement markers create a practical athlete profile.</span>
               </div>
             </div>
             <div class="measure-proof-item">
               <div>
-                <strong>Simple work between sessions</strong>
-                <span>Athletes leave knowing exactly what to practice next.</span>
+                <strong>Custom mechanical analysis</strong>
+                <span>PitchLab Software helps review delivery patterns, timing, direction, and movement efficiency without burying athletes in jargon.</span>
+              </div>
+            </div>
+            <div class="measure-proof-item">
+              <div>
+                <strong>Personal write-ups and systems</strong>
+                <span>Each athlete receives plain-language notes, targeted drills, and a repeatable training system for work between sessions.</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="measure-panel" aria-label="Parent progress snapshot">
+        <div class="measure-panel" aria-label="Athlete onboarding and analysis dashboard">
           <div class="measure-panel-header">
             <div class="measure-panel-title">
-              <span>Parent progress snapshot</span>
-              <strong>Clear enough to act on</strong>
+              <span>Athlete profile buildout</span>
+              <strong>From intake to training plan</strong>
             </div>
-            <span class="measure-status">Parent-ready</span>
+            <span class="measure-status">PitchLab-supported</span>
           </div>
           <div class="snapshot-grid">
             <div class="snapshot">
-              <span>Current focus</span>
-              <strong>Mechanics</strong>
+              <span>Intake</span>
+              <strong>Biometrics</strong>
             </div>
             <div class="snapshot">
-              <span>Workload</span>
-              <strong>Age-aware</strong>
+              <span>Analysis</span>
+              <strong>Delivery map</strong>
             </div>
             <div class="snapshot">
-              <span>Next step</span>
-              <strong>At-home plan</strong>
+              <span>Training</span>
+              <strong>Custom Programming</strong>
             </div>
           </div>
           <div class="focus-card">
-            <div class="focus-label">This week's priority</div>
-            <strong>Build repeatable direction to the plate.</strong>
-            <p>One mechanical cue, one drill, and one workload note keep the work focused after the session ends.</p>
+            <div class="focus-label">How the plan is built</div>
+            <strong>Profile first. Mechanics second. Training system always.</strong>
+            <p>The goal is to connect who the athlete is, how they move, and what they need next into one clear development plan.</p>
             <div class="progress-track" aria-hidden="true"><span></span></div>
           </div>
-          <ul class="parent-note-list">
-            <li>Video clips tied to the main coaching point</li>
-            <li>Session notes that avoid overloading the athlete</li>
-            <li>Goals that make the next visit easy to measure</li>
-          </ul>
+          <div class="system-list" aria-label="What the athlete receives">
+            <div class="system-item">
+              <strong>Personal write-up</strong>
+              <p>A written breakdown of key findings, priority cues, and the mechanical goals that matter first.</p>
+            </div>
+            <div class="system-item">
+              <strong>Training system</strong>
+              <p>A focused drill menu, workload notes, and weekly structure athletes can follow between sessions.</p>
+            </div>
           </div>
+        </div>
       </div>
     </section>
 
