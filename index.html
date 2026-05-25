@@ -45,7 +45,7 @@
         "https://lachelitepurp.vercel.app/lachapelle-elite-logo.png"
       ],
       "description": "Private pitching development, strength training, and group pitching programs for developing athletes in Eugene, Oregon.",
-      "priceRange": "$75 per session",
+      "priceRange": "$30-$75 per session",
       "sport": "Baseball",
       "founder": {
         "@id": "https://lachelitepurp.vercel.app/#austin-lachapelle"
@@ -79,7 +79,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Private pitching development",
-              "serviceType": "Baseball pitching coaching"
+              "serviceType": "60-minute private baseball pitching coaching"
             }
           },
           {
@@ -91,17 +91,19 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Performance training",
-              "serviceType": "Strength and conditioning for athletes"
+              "serviceType": "60-minute private strength and conditioning for athletes"
             }
           },
           {
             "@type": "Offer",
             "name": "Group Pitching Program",
+            "price": "30",
+            "priceCurrency": "USD",
             "url": "https://calendly.com/austinlachapelle124/group-pitching-program",
             "itemOffered": {
               "@type": "Service",
               "name": "Group pitching program",
-              "serviceType": "Group baseball pitching development"
+              "serviceType": "90-minute group baseball pitching development for 2-6 athletes"
             }
           }
         ]
@@ -723,6 +725,45 @@
     border: 1px solid rgba(255, 255, 255, 0.72);
     border-radius: calc(var(--radius) - 2px);
     pointer-events: none;
+  }
+
+  .info-video-frame {
+    min-height: clamp(150px, 13vw, 210px);
+    background: #120918;
+  }
+
+  .info-video-frame::before {
+    z-index: 2;
+    background:
+      linear-gradient(180deg, rgba(18, 9, 24, 0.04), rgba(18, 9, 24, 0.16));
+    opacity: 1;
+    mask-image: none;
+  }
+
+  .info-video-frame::after {
+    z-index: 3;
+  }
+
+  .info-video {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .info-illustration {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .info-illustration .svg-shadow {
+    filter: drop-shadow(0 12px 18px rgba(23, 19, 28, 0.14));
   }
 
   .frame-diamond,
@@ -1583,6 +1624,77 @@
     background: linear-gradient(180deg, var(--paper-2), var(--paper));
   }
 
+  .testimonials {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(135deg, rgba(109, 40, 217, 0.08), transparent 38%),
+      linear-gradient(180deg, var(--paper), var(--paper-2));
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .testimonial-card {
+    position: relative;
+    display: grid;
+    align-content: space-between;
+    min-height: 250px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 12px 30px rgba(23, 19, 28, 0.07);
+    padding: 1.2rem;
+  }
+
+  .testimonial-card::before {
+    content: "";
+    width: 34px;
+    height: 5px;
+    border-radius: 999px;
+    background: var(--purple);
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-card:nth-child(2)::before {
+    background: #66856e;
+  }
+
+  .testimonial-card:nth-child(3)::before {
+    background: var(--gold);
+  }
+
+  .testimonial-card blockquote {
+    margin: 0;
+  }
+
+  .testimonial-card p {
+    color: var(--ink);
+    font-size: 1.02rem;
+    font-weight: 750;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+  }
+
+  .testimonial-card footer {
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 850;
+    padding-top: 0.78rem;
+  }
+
+  .testimonial-note {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
   .faq-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1775,10 +1887,16 @@
     .credential-grid,
     .process-grid,
     .measure-grid,
+    .testimonial-grid,
     .faq-grid,
     .cta-box,
     .footer-grid {
       grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+      align-content: start;
+      min-height: auto;
     }
 
     .section-head {
@@ -2411,10 +2529,19 @@
     }
 
     .info-card::before,
-    .info-card::after,
-    .info-visual-frame,
-    .info-meta {
+    .info-card::after {
       display: none;
+    }
+
+    .info-cards .info-visual-frame {
+      display: block;
+      min-height: 0;
+      aspect-ratio: 16 / 10;
+      margin: 1rem 0 0.78rem;
+    }
+
+    .info-cards .info-meta {
+      display: inline-flex;
     }
 
     .info-index {
@@ -2449,6 +2576,9 @@
     .measure-copy > .section-kicker,
     .measure-copy > h2,
     .measure-copy > .section-lede,
+    .testimonials > .section-inner > .section-kicker,
+    .testimonials > .section-inner > h2,
+    .testimonials > .section-inner > .section-lede,
     .parents > .section-inner > .section-kicker,
     .parents > .section-inner > h2,
     .parents > .section-inner > .section-lede {
@@ -2458,6 +2588,7 @@
     .programs .section-note,
     .process > .section-inner > .section-lede,
     .measure-copy > .section-lede,
+    .testimonials > .section-inner > .section-lede,
     .parents > .section-inner > .section-lede {
       margin-left: auto;
       margin-right: auto;
@@ -2737,6 +2868,32 @@
       line-height: 1.45;
     }
 
+    .testimonial-grid {
+      gap: 0.78rem;
+      margin-top: 1.2rem;
+    }
+
+    .testimonial-card {
+      min-height: auto;
+      padding: 0.95rem;
+      text-align: center;
+    }
+
+    .testimonial-card::before {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .testimonial-card p {
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .testimonial-note {
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
     .faq-grid {
       gap: 0.78rem;
       margin-top: 1.2rem;
@@ -2850,6 +3007,283 @@
     }
   }
 
+  /* Redesigned session cards */
+  .program-card {
+    position: relative;
+    border: 1px solid rgba(23, 19, 28, 0.12);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.82)),
+      var(--paper);
+    box-shadow: 0 18px 42px rgba(23, 19, 28, 0.09);
+  }
+
+  .program-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 6px;
+    background: linear-gradient(90deg, var(--purple), var(--purple-soft));
+  }
+
+  .program-card:nth-child(2)::before {
+    background: linear-gradient(90deg, #66856e, #a8bda7);
+  }
+
+  .program-card:nth-child(3)::before {
+    background: linear-gradient(90deg, var(--gold), #ecd696);
+  }
+
+  .program-top {
+    min-height: auto;
+    padding: 1.25rem 1.25rem 1rem;
+    border-bottom: 1px solid rgba(23, 19, 28, 0.09);
+    background:
+      radial-gradient(circle at top right, rgba(109, 40, 217, 0.14), transparent 38%),
+      linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0.78));
+  }
+
+  .program-card:nth-child(2) .program-top {
+    background:
+      radial-gradient(circle at top right, rgba(102, 133, 110, 0.2), transparent 40%),
+      linear-gradient(180deg, #ffffff, rgba(247, 250, 246, 0.82));
+  }
+
+  .program-card:nth-child(3) .program-top {
+    background:
+      radial-gradient(circle at top right, rgba(215, 180, 106, 0.28), transparent 40%),
+      linear-gradient(180deg, #ffffff, rgba(252, 248, 236, 0.82));
+  }
+
+  .program-head-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.9rem;
+    margin-bottom: 1.05rem;
+  }
+
+  .program-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--plum-deep);
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 900;
+    box-shadow: 0 12px 24px rgba(23, 19, 28, 0.14);
+  }
+
+  .program-card:nth-child(2) .program-icon {
+    background: #425b49;
+  }
+
+  .program-card:nth-child(3) .program-icon {
+    background: #846626;
+  }
+
+  .program-tag {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.68);
+    white-space: nowrap;
+  }
+
+  .program-top h3 {
+    font-size: clamp(1.55rem, 2.55vw, 2.05rem);
+    line-height: 1.05;
+    margin-bottom: 0.7rem;
+  }
+
+  .program-subtitle {
+    color: var(--muted);
+    font-size: 0.98rem;
+    font-weight: 650;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .program-body {
+    padding: 1.2rem 1.25rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .program-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .program-stats span {
+    min-width: 0;
+    padding: 0.74rem 0.62rem;
+    display: grid;
+    gap: 0.06rem;
+    border-right: 1px solid var(--line);
+  }
+
+  .program-stats span:last-child {
+    border-right: 0;
+  }
+
+  .program-stats strong {
+    color: var(--ink);
+    font-size: 1.05rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .program-stats small {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .program-fit {
+    border-left: 4px solid rgba(109, 40, 217, 0.72);
+    color: #3b3343;
+    font-size: 0.95rem;
+    font-weight: 650;
+    line-height: 1.48;
+    margin: 0;
+    padding-left: 0.8rem;
+  }
+
+  .program-card:nth-child(2) .program-fit {
+    border-left-color: rgba(102, 133, 110, 0.82);
+  }
+
+  .program-card:nth-child(3) .program-fit {
+    border-left-color: rgba(215, 180, 106, 0.95);
+  }
+
+  .program-list-block {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .program-list-title {
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .program-list {
+    margin: 0;
+  }
+
+  .program-list li {
+    grid-template-columns: 16px 1fr;
+    gap: 0.62rem;
+    font-size: 0.92rem;
+    line-height: 1.42;
+  }
+
+  .program-list li::before {
+    width: 9px;
+    height: 9px;
+    margin-top: 0.44rem;
+    background: var(--purple);
+    box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.1);
+  }
+
+  .program-card:nth-child(2) .program-list li::before {
+    background: #66856e;
+    box-shadow: 0 0 0 4px rgba(102, 133, 110, 0.12);
+  }
+
+  .program-card:nth-child(3) .program-list li::before {
+    background: var(--gold);
+    box-shadow: 0 0 0 4px rgba(215, 180, 106, 0.16);
+  }
+
+  .program-meta {
+    display: none;
+  }
+
+  .program-cta {
+    width: 100%;
+    margin-top: auto;
+    min-height: 52px;
+  }
+
+  .program-card:nth-child(2) .program-cta {
+    background: #4f6b57;
+    box-shadow: 0 12px 24px rgba(79, 107, 87, 0.2);
+  }
+
+  .program-card:nth-child(2) .program-cta:hover {
+    background: #425b49;
+    box-shadow: 0 16px 28px rgba(79, 107, 87, 0.24);
+  }
+
+  .program-card:nth-child(3) .program-cta {
+    background: #6f531b;
+    box-shadow: 0 12px 24px rgba(111, 83, 27, 0.2);
+  }
+
+  .program-card:nth-child(3) .program-cta:hover {
+    background: #5d4517;
+    box-shadow: 0 16px 28px rgba(111, 83, 27, 0.24);
+  }
+
+  @media (max-width: 920px) {
+    .program-card {
+      box-shadow: 0 14px 34px rgba(23, 19, 28, 0.08);
+    }
+
+    .program-top,
+    .program-body {
+      padding-left: 1.15rem;
+      padding-right: 1.15rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .program-head-row {
+      align-items: flex-start;
+      margin-bottom: 0.85rem;
+    }
+
+    .program-icon {
+      width: 42px;
+      height: 42px;
+      font-size: 0.98rem;
+    }
+
+    .program-tag {
+      font-size: 0.7rem;
+      white-space: normal;
+      text-align: right;
+    }
+
+    .program-subtitle,
+    .program-fit {
+      font-size: 0.9rem;
+    }
+
+    .program-stats span {
+      padding: 0.62rem 0.46rem;
+    }
+
+    .program-stats strong {
+      font-size: 0.98rem;
+    }
+
+    .program-stats small {
+      font-size: 0.66rem;
+    }
+
+    .program-list li {
+      font-size: 0.88rem;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -2881,6 +3315,8 @@
         <li><a href="#programs">Programs</a></li>
         <li><a href="#coach">Coach</a></li>
         <li><a href="#process">Process</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="./athlete-profiles.html">Athlete Profiles</a></li>
         <li><a href="#parents">Parents</a></li>
         <li><a href="#schedule">Schedule</a></li>
       </ul>
@@ -2923,11 +3359,11 @@
               <strong>Clear next steps</strong>
               <p>Every athlete forms a unique profile, built around mechanical priorities and clear goals to strive toward.</p>
             </div>
-            <div class="info-visual-frame frame-roadmap" aria-hidden="true">
-              <span class="frame-diamond"></span>
-              <span class="frame-path"></span>
-              <span class="frame-arc"></span>
-              <span class="frame-ball"></span>
+            <div class="info-visual-frame info-video-frame frame-roadmap" aria-hidden="true">
+              <video class="info-video" autoplay muted loop playsinline preload="auto" data-autoplay-video>
+                <source src="./clear-next-steps-video.mp4" type="video/mp4">
+                <source src="./clear-next-steps-video.m4v" type="video/mp4">
+              </video>
             </div>
             <span class="info-meta">Session roadmap</span>
           </article>
@@ -2938,9 +3374,35 @@
               <p>Pitching work is paired with arm care, movement quality, and realistic guidance for the athlete's season.</p>
             </div>
             <div class="info-visual-frame frame-workload" aria-hidden="true">
-              <span class="frame-gauge"></span>
-              <span class="frame-pulse"></span>
-              <span class="frame-stack"><i></i><i></i><i></i></span>
+              <svg class="info-illustration workload-svg" viewBox="0 0 320 220" focusable="false">
+                <defs>
+                  <linearGradient id="workloadBottle" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#f9fbff"/>
+                    <stop offset="1" stop-color="#cddbed"/>
+                  </linearGradient>
+                  <linearGradient id="workloadGlove" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#4a2f25"/>
+                    <stop offset="1" stop-color="#17131c"/>
+                  </linearGradient>
+                </defs>
+                <path d="M34 158C78 78 151 74 284 143" fill="none" stroke="#6d28d9" stroke-width="14" stroke-linecap="round" opacity="0.24"/>
+                <path d="M38 177C93 112 167 108 276 170" fill="none" stroke="#66856e" stroke-width="11" stroke-linecap="round" opacity="0.34"/>
+                <g class="svg-shadow">
+                  <path d="M55 137c-8-24 6-45 27-49 10-18 35-18 47-1 18 4 30 20 28 42-2 31-25 50-59 50-24 0-37-17-43-42Z" fill="url(#workloadGlove)"/>
+                  <path d="M79 92c6 19 8 44 2 76M101 84c7 24 8 55 0 89M124 89c6 22 5 52-4 78" fill="none" stroke="#8c6a51" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+                  <path d="M70 141c21 8 45 8 73-1" fill="none" stroke="#d7b46a" stroke-width="4" stroke-linecap="round" opacity="0.88"/>
+                  <ellipse cx="134" cy="162" rx="12" ry="9" fill="#b91c1c" stroke="#fffdf7" stroke-width="2" transform="rotate(-10 134 162)"/>
+                  <text x="134" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="900" fill="#ffffff" transform="rotate(-10 134 162)">R</text>
+                  <circle cx="178" cy="84" r="31" fill="#fffdf7" stroke="rgba(23, 19, 28, 0.18)" stroke-width="3"/>
+                  <path d="M158 63c11 9 13 31 2 43M198 63c-11 9-13 31-2 43" fill="none" stroke="#7a2632" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M160 70l-6-4M162 78l-7-2M162 87l-7 1M160 96l-6 4M196 70l6-4M194 78l7-2M194 87l7 1M196 96l6 4" fill="none" stroke="#7a2632" stroke-width="2" stroke-linecap="round"/>
+                  <rect x="235" y="55" width="42" height="112" rx="13" fill="url(#workloadBottle)" stroke="rgba(23, 19, 28, 0.16)" stroke-width="3"/>
+                  <rect x="245" y="37" width="22" height="22" rx="5" fill="#2d153d"/>
+                  <rect x="240" y="49" width="32" height="13" rx="5" fill="#66856e"/>
+                  <path d="M245 116h23" stroke="#6d28d9" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+                  <path d="M248 72c-7 19-7 50 0 78" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.72"/>
+                </g>
+              </svg>
             </div>
             <span class="info-meta">Workload context</span>
           </article>
@@ -2951,9 +3413,40 @@
               <p>Families get plain-language feedback on progress, goals, and what the athlete needs most next.</p>
             </div>
             <div class="info-visual-frame frame-notes" aria-hidden="true">
-              <span class="frame-device"><i></i><i></i><i></i></span>
-              <span class="frame-bubble"></span>
-              <span class="frame-check"></span>
+              <svg class="info-illustration review-svg" viewBox="0 0 320 220" focusable="false">
+                <defs>
+                  <linearGradient id="reviewScreen" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#ffffff"/>
+                    <stop offset="1" stop-color="#edf4fb"/>
+                  </linearGradient>
+                  <linearGradient id="reviewGlove" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#5c392c"/>
+                    <stop offset="1" stop-color="#21151b"/>
+                  </linearGradient>
+                </defs>
+                <g class="svg-shadow">
+                  <rect x="44" y="39" width="190" height="126" rx="16" fill="#17131c" opacity="0.94"/>
+                  <rect x="57" y="52" width="164" height="100" rx="10" fill="url(#reviewScreen)"/>
+                  <rect x="72" y="66" width="68" height="42" rx="7" fill="#2d153d" opacity="0.92"/>
+                  <path d="M99 78l22 10-22 11Z" fill="#ffffff"/>
+                  <path d="M153 72h45M153 89h34M153 106h50M72 126h126" stroke="#6d28d9" stroke-width="6" stroke-linecap="round" opacity="0.28"/>
+                  <path d="M72 139h78" stroke="#66856e" stroke-width="6" stroke-linecap="round" opacity="0.42"/>
+                  <circle cx="213" cy="160" r="4" fill="#ffffff" opacity="0.9"/>
+                </g>
+                <g class="svg-shadow">
+                  <path d="M220 157l56-32" stroke="#7a5630" stroke-width="12" stroke-linecap="round"/>
+                  <path d="M270 120l15-9" stroke="#d7b46a" stroke-width="18" stroke-linecap="round"/>
+                  <circle cx="246" cy="160" r="24" fill="#fffdf7" stroke="rgba(23, 19, 28, 0.18)" stroke-width="3"/>
+                  <path d="M231 144c9 7 10 25 2 34M261 144c-9 7-10 25-2 34" fill="none" stroke="#7a2632" stroke-width="2.3" stroke-linecap="round"/>
+                  <path d="M235 151l-5-4M236 158l-6-2M236 166l-6 1M257 151l5-4M256 158l6-2M256 166l6 1" fill="none" stroke="#7a2632" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M70 164c-6-18 5-33 21-35 8-12 25-12 34 0 14 3 23 15 22 31-2 24-20 38-45 38-18 0-28-13-32-34Z" fill="url(#reviewGlove)" opacity="0.98"/>
+                  <path d="M88 130c4 17 5 35 1 58M106 126c5 18 5 40-1 62M124 132c4 15 3 35-4 50" fill="none" stroke="#9a7156" stroke-width="4" stroke-linecap="round" opacity="0.86"/>
+                  <ellipse cx="128" cy="181" rx="10" ry="7.8" fill="#b91c1c" stroke="#fffdf7" stroke-width="1.8" transform="rotate(-12 128 181)"/>
+                  <text x="128" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="900" fill="#ffffff" transform="rotate(-12 128 181)">R</text>
+                </g>
+                <path d="M230 63h26a16 16 0 0 1 16 16v28" fill="none" stroke="#d7b46a" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+                <path d="M263 107l9 10 18-24" fill="none" stroke="#66856e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
             <span class="info-meta">Progress notes</span>
           </article>
@@ -2974,21 +3467,28 @@
         <div class="program-grid">
           <article class="program-card">
             <div class="program-top">
-              <span class="program-tag">Pitching</span>
+              <div class="program-head-row">
+                <span class="program-icon" aria-hidden="true">P</span>
+                <span class="program-tag">Private pitching</span>
+              </div>
               <h3>Pitching Development</h3>
+              <p class="program-subtitle">A focused 60-minute session for athletes who need better movement, command, rhythm, and mound confidence.</p>
             </div>
             <div class="program-body">
-              <p>Hands-on pitching work for athletes who need better movement, command, rhythm, and mound confidence.</p>
-              <ul class="program-list">
-                <li>Delivery assessment and efficient movement cues</li>
-                <li>Arm care, warm-up habits, and workload guidance</li>
-                <li>Command, pitch feel, and competitive routines</li>
-                <li>Simple take-home priorities after each session</li>
-              </ul>
-              <div class="program-meta">
-                <span>Private 1:1</span>
-                <span>$75/session</span>
-                <span>Development plan</span>
+              <div class="program-stats" aria-label="Pitching Development session details">
+                <span><strong>$75</strong><small>per session</small></span>
+                <span><strong>60</strong><small>minutes</small></span>
+                <span><strong>1:1</strong><small>private</small></span>
+              </div>
+              <p class="program-fit"><strong>Best fit:</strong> pitchers who need clear mechanical priorities, better routines, and a simple plan between sessions.</p>
+              <div class="program-list-block">
+                <span class="program-list-title">Session focus</span>
+                <ul class="program-list">
+                  <li>Delivery assessment and efficient movement cues</li>
+                  <li>Arm care, warm-up habits, and workload guidance</li>
+                  <li>Command, pitch feel, and competitive routines</li>
+                  <li>Simple take-home priorities after each session</li>
+                </ul>
               </div>
               <a class="program-cta" href="https://calendly.com/austinlachapelle124/30min" data-calendly-popup>Schedule Pitching</a>
             </div>
@@ -2996,21 +3496,28 @@
 
           <article class="program-card">
             <div class="program-top">
-              <span class="program-tag">Strength and conditioning</span>
+              <div class="program-head-row">
+                <span class="program-icon" aria-hidden="true">S</span>
+                <span class="program-tag">Performance</span>
+              </div>
               <h3>Performance Training</h3>
+              <p class="program-subtitle">A 60-minute strength, mobility, and conditioning session built to support athletic development on the field.</p>
             </div>
             <div class="program-body">
-              <p>Strength, mobility, conditioning, and nutrition habits that support athletic development and better movement on the field.</p>
-              <ul class="program-list">
-                <li>Age-appropriate strength and movement patterns</li>
-                <li>Mobility, rotation, balance, and body control</li>
-                <li>Conditioning that supports sport performance</li>
-                <li>Nutrition and meal-prep guidance for busy families</li>
-              </ul>
-              <div class="program-meta">
-                <span>Private 1:1</span>
-                <span>$75/session</span>
-                <span>Healthy habits</span>
+              <div class="program-stats" aria-label="Performance Training session details">
+                <span><strong>$75</strong><small>per session</small></span>
+                <span><strong>60</strong><small>minutes</small></span>
+                <span><strong>1:1</strong><small>private</small></span>
+              </div>
+              <p class="program-fit"><strong>Best fit:</strong> athletes who need stronger movement patterns, better body control, and durable training habits.</p>
+              <div class="program-list-block">
+                <span class="program-list-title">Session focus</span>
+                <ul class="program-list">
+                  <li>Age-appropriate strength and movement patterns</li>
+                  <li>Mobility, rotation, balance, and body control</li>
+                  <li>Conditioning that supports sport performance</li>
+                  <li>Nutrition and meal-prep guidance for busy families</li>
+                </ul>
               </div>
               <a class="program-cta" href="https://calendly.com/austinlachapelle124/strength-training" data-calendly-popup data-calendly-strength>Schedule Training</a>
             </div>
@@ -3018,21 +3525,28 @@
 
           <article class="program-card">
             <div class="program-top">
-              <span class="program-tag">Group pitching</span>
+              <div class="program-head-row">
+                <span class="program-icon" aria-hidden="true">G</span>
+                <span class="program-tag">Small group</span>
+              </div>
               <h3>Group Pitching Program</h3>
+              <p class="program-subtitle">A 90-minute small-group pitching session for 2-6 athletes who want structured reps and peer energy.</p>
             </div>
             <div class="program-body">
-              <p>A small-group pitching setting for athletes who want structured reps, peer energy, and clear coaching priorities.</p>
-              <ul class="program-list">
-                <li>Shared skill work with individual coaching moments</li>
-                <li>Mechanical focus, command work, and throwing routines</li>
-                <li>Competitive drills that build mound confidence</li>
-                <li>Clear goals athletes can carry into practice</li>
-              </ul>
-              <div class="program-meta">
-                <span>Group format</span>
-                <span>Pitching focus</span>
-                <span>Structured reps</span>
+              <div class="program-stats" aria-label="Group Pitching Program session details">
+                <span><strong>$30</strong><small>per athlete</small></span>
+                <span><strong>90</strong><small>minutes</small></span>
+                <span><strong>2-6</strong><small>athletes</small></span>
+              </div>
+              <p class="program-fit"><strong>Best fit:</strong> pitchers who want competitive work, shared reps, and coaching priorities in a small-group setting.</p>
+              <div class="program-list-block">
+                <span class="program-list-title">Session focus</span>
+                <ul class="program-list">
+                  <li>Shared skill work with individual coaching moments</li>
+                  <li>Mechanical focus, command work, and throwing routines</li>
+                  <li>Competitive drills that build mound confidence</li>
+                  <li>Clear goals athletes can carry into practice</li>
+                </ul>
               </div>
               <a class="program-cta" href="https://calendly.com/austinlachapelle124/group-pitching-program" data-calendly-popup data-calendly-group>Schedule Group Pitching</a>
             </div>
@@ -3227,6 +3741,34 @@
       </div>
     </section>
 
+    <section class="section testimonials" id="testimonials">
+      <div class="section-inner">
+        <div class="section-kicker">Testimonials</div>
+        <h2>Family feedback belongs here.</h2>
+        <p class="section-lede">Use short parent or athlete quotes that speak to clear plans, confidence, communication, and steady progress.</p>
+        <div class="testimonial-grid" aria-label="Testimonial placeholders">
+          <article class="testimonial-card">
+            <blockquote>
+              <p>"Add a parent quote about clear communication, progress notes, or confidence here."</p>
+              <footer>Parent testimonial</footer>
+            </blockquote>
+          </article>
+          <article class="testimonial-card">
+            <blockquote>
+              <p>"Add an athlete quote about feeling more prepared, focused, or confident on the mound here."</p>
+              <footer>Athlete testimonial</footer>
+            </blockquote>
+          </article>
+          <article class="testimonial-card">
+            <blockquote>
+              <p>"Austin brings the energy and love to this program that we all as players should embody with in the game of baseball"</p>
+              <footer>Burke Sherman, Senior at SEHS</footer>
+            </blockquote>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section parents" id="parents">
       <div class="section-inner">
         <div class="section-kicker">For parents</div>
@@ -3281,6 +3823,7 @@
           <li><a href="#programs">Group Pitching Program</a></li>
           <li><a href="#coach">Coach Credentials</a></li>
           <li><a href="#process">Coaching Process</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -3327,6 +3870,25 @@
           window.location.href = url;
         }
       });
+    });
+
+    document.querySelectorAll('[data-autoplay-video]').forEach(function (video) {
+      video.muted = true;
+      video.playsInline = true;
+
+      var playVideo = function () {
+        var playPromise = video.play();
+
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(function () {});
+        }
+      };
+
+      if (video.readyState >= 2) {
+        playVideo();
+      } else {
+        video.addEventListener('canplay', playVideo, { once: true });
+      }
     });
   });
 </script>

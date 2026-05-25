@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Athlete Profiles | Lachapelle Elite</title>
+<meta name="description" content="Unlisted Lachapelle Elite athlete profile dashboard for current training roster information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;650;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17131c;
+    --plum: #2d153d;
+    --plum-deep: #120918;
+    --purple: #6d28d9;
+    --purple-soft: #8b5cf6;
+    --paper: #fbfaf7;
+    --paper-2: #f2efe8;
+    --gold: #d7b46a;
+    --sage: #dfe8dc;
+    --muted: #675d70;
+    --line: rgba(23, 19, 28, 0.12);
+    --line-dark: rgba(255, 255, 255, 0.14);
+    --shadow: 0 22px 60px rgba(23, 19, 28, 0.14);
+    --radius: 8px;
+    --max: 1180px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  .topbar {
+    background: var(--plum-deep);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+
+  .topbar-inner,
+  .nav,
+  .page-inner,
+  .footer-inner {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .topbar-inner {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(251, 250, 247, 0.9);
+    border-top: 1px solid rgba(109, 40, 217, 0.42);
+    border-bottom: 2px solid rgba(109, 40, 217, 0.42);
+    backdrop-filter: blur(18px);
+  }
+
+  .nav {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 0;
+    text-decoration: none;
+  }
+
+  .brand img {
+    width: 96px;
+    height: 66px;
+    object-fit: contain;
+  }
+
+  .brand-copy {
+    display: grid;
+    gap: 0.05rem;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    font-weight: 850;
+    line-height: 1.1;
+  }
+
+  .brand-meta {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .nav-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.74rem 1rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 850;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.62);
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 88% 20%, rgba(109, 40, 217, 0.16), transparent 30%),
+      linear-gradient(135deg, var(--plum-deep), var(--plum));
+    color: #ffffff;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 34px 34px;
+    opacity: 0.4;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+    padding: 4rem 0 3rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.55fr);
+    gap: 2rem;
+    align-items: end;
+  }
+
+  .eyebrow,
+  .section-kicker {
+    color: var(--gold);
+    font-size: 0.86rem;
+    font-weight: 900;
+  }
+
+  h1 {
+    max-width: 760px;
+    font-size: clamp(2.7rem, 6vw, 5.6rem);
+    line-height: 0.95;
+    letter-spacing: 0;
+    margin-top: 0.6rem;
+  }
+
+  .hero-copy p {
+    max-width: 690px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-weight: 650;
+    margin-top: 1.1rem;
+  }
+
+  .hero-panel {
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    padding: 1rem;
+  }
+
+  .hero-panel strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .hero-panel span {
+    display: block;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.85rem;
+    font-weight: 800;
+    margin-top: 0.35rem;
+  }
+
+  .page-section {
+    padding: 4rem 0;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: 0;
+    margin-top: 0.35rem;
+  }
+
+  .section-note {
+    max-width: 380px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .athlete-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 16px 38px rgba(23, 19, 28, 0.08);
+  }
+
+  .athlete-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 6px;
+    background: linear-gradient(90deg, var(--purple), var(--purple-soft));
+  }
+
+  .athlete-photo {
+    position: relative;
+    min-height: 280px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 70% 25%, rgba(109, 40, 217, 0.18), transparent 34%),
+      linear-gradient(135deg, #ffffff, #eee7ff);
+  }
+
+  .athlete-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .athlete-placeholder {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: rgba(45, 21, 61, 0.62);
+    font-size: 4rem;
+    font-weight: 900;
+  }
+
+  .athlete-placeholder::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(109, 40, 217, 0.18);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.52);
+  }
+
+  .athlete-placeholder span {
+    position: relative;
+  }
+
+  .athlete-body {
+    padding: 1.1rem;
+  }
+
+  .athlete-lockup {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .athlete-name {
+    font-size: 1.28rem;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+
+  .athlete-school {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 800;
+    margin-top: 0.25rem;
+  }
+
+  .athlete-status {
+    flex: 0 0 auto;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.34rem 0.52rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 900;
+    background: rgba(255, 255, 255, 0.68);
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.62rem;
+  }
+
+  .metric {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.72));
+    padding: 0.8rem;
+  }
+
+  .metric span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .metric strong {
+    display: block;
+    color: var(--ink);
+    font-size: 1.38rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-top: 0.3rem;
+  }
+
+  .profile-note {
+    border-left: 4px solid var(--gold);
+    color: #3b3343;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding-left: 0.8rem;
+  }
+
+  .site-footer {
+    background: var(--plum-deep);
+    color: rgba(255, 255, 255, 0.72);
+    padding: 2rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.86rem;
+    font-weight: 750;
+  }
+
+  .footer-inner a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  @media (max-width: 960px) {
+    .hero-inner,
+    .profile-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-panel {
+      max-width: 420px;
+    }
+
+    .section-head {
+      display: block;
+    }
+
+    .section-note {
+      margin-top: 0.8rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .topbar-inner,
+    .nav,
+    .page-inner,
+    .footer-inner,
+    .hero-inner {
+      width: min(100% - 28px, var(--max));
+    }
+
+    .topbar-inner {
+      justify-content: center;
+      text-align: center;
+      padding: 0.58rem 0;
+    }
+
+    .topbar-inner span:last-child {
+      display: none;
+    }
+
+    .site-header {
+      position: static;
+      background: linear-gradient(180deg, rgba(45, 21, 61, 0.98), rgba(18, 9, 24, 0.98));
+    }
+
+    .nav {
+      min-height: 86px;
+      justify-content: center;
+    }
+
+    .brand {
+      width: 100%;
+      justify-content: center;
+      position: relative;
+    }
+
+    .brand img {
+      position: absolute;
+      left: 0;
+      width: 80px;
+      height: 56px;
+    }
+
+    .brand-copy {
+      max-width: 240px;
+      text-align: center;
+    }
+
+    .brand-name {
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
+    .brand-meta {
+      color: rgba(255, 255, 255, 0.72);
+      white-space: nowrap;
+      font-size: 0.72rem;
+    }
+
+    .nav-link {
+      display: none;
+    }
+
+    .hero-inner {
+      padding: 3rem 0 2.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 14vw, 3.35rem);
+    }
+
+    .hero-copy,
+    .section-head {
+      text-align: center;
+    }
+
+    .hero-copy p,
+    .section-note {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-panel {
+      max-width: none;
+    }
+
+    .page-section {
+      padding: 3rem 0;
+    }
+
+    .athlete-photo,
+    .athlete-photo img {
+      min-height: 245px;
+    }
+
+    .athlete-lockup {
+      display: grid;
+      gap: 0.65rem;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .metrics-grid {
+      gap: 0.5rem;
+    }
+
+    .metric {
+      text-align: center;
+      padding: 0.72rem 0.5rem;
+    }
+
+    .metric strong {
+      font-size: 1.1rem;
+    }
+
+    .profile-note {
+      text-align: center;
+      border-left: 0;
+      border-top: 4px solid var(--gold);
+      padding: 0.8rem 0 0;
+    }
+
+    .footer-inner {
+      display: grid;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span><strong>Athlete profile dashboard</strong> in Eugene, Oregon</span>
+      <span>Velocity &bull; Spin rate &bull; High school &bull; Training notes</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Athlete profile navigation">
+      <a class="brand" href="./index.html">
+        <img src="./lachapelle-elite-logo.png" onerror="this.onerror=null;this.src='./LachElitePurp-2.png';" alt="Lachapelle Elite logo">
+        <span class="brand-copy">
+          <span class="brand-name">Lachapelle Elite</span>
+          <span class="brand-meta">Pitching &amp; Performance Coaching</span>
+        </span>
+      </a>
+      <a class="nav-link" href="./index.html">Back to Site</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Unlisted roster view</div>
+          <h1>Athlete Profiles</h1>
+          <p>Current athlete snapshots for velocity, spin rate, high school, and development context.</p>
+        </div>
+        <div class="hero-panel" aria-label="Profile privacy status">
+          <strong>Direct access</strong>
+          <span>Unlisted page for approved roster information.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="profiles-title">
+      <div class="page-inner">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Current athletes</div>
+            <h2 id="profiles-title">Training roster</h2>
+          </div>
+          <p class="section-note">Approved athlete names, images, schools, velocities, and spin rates can be filled in here.</p>
+        </div>
+        <div class="profile-grid" id="profile-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 Lachapelle Elite &middot; Athlete development</span>
+      <a href="./index.html">Return to main site</a>
+    </div>
+  </footer>
+
+<script>
+  var athletes = [
+    {
+      name: "Profile Slot 01",
+      highSchool: "High School",
+      velocity: "-- mph",
+      spinRate: "-- rpm",
+      image: "",
+      status: "Current",
+      note: "Add approved athlete image, school, velocity, spin rate, and training focus."
+    },
+    {
+      name: "Profile Slot 02",
+      highSchool: "High School",
+      velocity: "-- mph",
+      spinRate: "-- rpm",
+      image: "",
+      status: "Current",
+      note: "Add approved athlete image, school, velocity, spin rate, and training focus."
+    },
+    {
+      name: "Profile Slot 03",
+      highSchool: "High School",
+      velocity: "-- mph",
+      spinRate: "-- rpm",
+      image: "",
+      status: "Current",
+      note: "Add approved athlete image, school, velocity, spin rate, and training focus."
+    }
+  ];
+
+  function getInitials(name) {
+    return name
+      .split(" ")
+      .filter(Boolean)
+      .slice(0, 2)
+      .map(function (word) { return word.charAt(0); })
+      .join("")
+      .toUpperCase() || "A";
+  }
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function (character) {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[character];
+    });
+  }
+
+  function renderProfiles() {
+    var grid = document.getElementById("profile-grid");
+    grid.innerHTML = athletes.map(function (athlete) {
+      var name = escapeHTML(athlete.name);
+      var highSchool = escapeHTML(athlete.highSchool);
+      var velocity = escapeHTML(athlete.velocity);
+      var spinRate = escapeHTML(athlete.spinRate);
+      var status = escapeHTML(athlete.status);
+      var note = escapeHTML(athlete.note);
+      var imageMarkup = athlete.image
+        ? '<img src="' + escapeHTML(athlete.image) + '" alt="' + name + ' athlete profile photo" loading="lazy" decoding="async">'
+        : '<div class="athlete-placeholder" aria-hidden="true"><span>' + escapeHTML(getInitials(athlete.name)) + '</span></div>';
+
+      return [
+        '<article class="athlete-card">',
+          '<figure class="athlete-photo">' + imageMarkup + '</figure>',
+          '<div class="athlete-body">',
+            '<div class="athlete-lockup">',
+              '<div>',
+                '<h3 class="athlete-name">' + name + '</h3>',
+                '<p class="athlete-school">' + highSchool + '</p>',
+              '</div>',
+              '<span class="athlete-status">' + status + '</span>',
+            '</div>',
+            '<div class="metrics-grid" aria-label="' + name + ' metrics">',
+              '<div class="metric"><span>Velocity</span><strong>' + velocity + '</strong></div>',
+              '<div class="metric"><span>Spin rate</span><strong>' + spinRate + '</strong></div>',
+            '</div>',
+            '<p class="profile-note">' + note + '</p>',
+          '</div>',
+        '</article>'
+      ].join("");
+    }).join("");
+  }
+
+  renderProfiles();
+</script>
+</body>
+</html>
